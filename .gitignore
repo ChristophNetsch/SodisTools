@@ -1,0 +1,7 @@
+$ cat .gitignore
+
+vi ~/.gitignore
+
+#ignore subdirectories
+/temp/*
+/keys/*
