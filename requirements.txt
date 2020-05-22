@@ -1,4 +1,3 @@
 slackclient
 py-trello
 pandas
-deine mudda
