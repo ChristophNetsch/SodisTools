@@ -12,6 +12,8 @@ from pathlib import Path
 import pandas as pd
 from datetime import datetime
 import shutil
+from slack import WebClient
+from slack.errors import SlackApiError
 
 ROOT=r'C:\Users\cnets\Desktop\SodisTools_development'
 COLUMNS=['Board','List','Title','Link','Description','Checklists','Comments','Due','Members']
@@ -72,7 +74,6 @@ def get_card_data(card):
             }
     return card_dict
 
-
 def export2excel():
     try:
         subdir=fr'temp\{timestamp}'
@@ -92,6 +93,8 @@ def export2excel():
                 board_name.replace(char,'')   
         #sf = StyleFrame(df_trello) #excel customization, see: https://styleframe.readthedocs.io/en/latest/usage_examples.html
         df_trello.to_excel(fr'temp\{timestamp}\{board_name}.xlsx',sheet_name='trello_export')   
+
+
 
 if __name__=='__main__':
     speed_eval=True

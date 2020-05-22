@@ -1,0 +1,4 @@
+slackclient
+py-trello
+pandas
+
