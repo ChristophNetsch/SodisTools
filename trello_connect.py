@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-Dies ist eine temporäre Skriptdatei.
-"""
 
 from trello import TrelloClient
 from styleframe import StyleFrame
@@ -48,20 +43,35 @@ REPORT TOOL
 configParser = ConfigParser.RawConfigParser()   
 configFilePath = r"report_test_folder/config.txt"
 configParser.read(configFilePath)
-b_id = configParser.get("Section IDs","Boards-IDs").split(",")
-al_id = configParser.get("Section IDs","Active List-IDs").split(",")
-al_id = configParser.get("Section IDs","Active List-IDs").split(",")
-fl_id = configParser.get("Section IDs","Final List-IDs").split(",")
-dl_id = configParser.get("Section IDs","Done List-IDs").split(",")
-l_id_order = configParser.get("Section IDs","List-ID Forward Order").split(",")
+board_id = configParser.get("Section IDs","Boards-IDs").split(",")
+alist_id = configParser.get("Section IDs","Active List-IDs").split(",")
+flist_id = configParser.get("Section IDs","Final List-IDs").split(",")
+dlist_id = configParser.get("Section IDs","Done List-IDs").split(",")
+list_id_order = configParser.get("Section IDs","List-ID Forward Order").split(",")
 report_repeat = configParser.get("Parameters","repeat")
 report_time = configParser.get("Parameters","report_time")
 
+#INITIALISIERUNG
+
+def get_cards_from_list_id (list_ids):
+    tmp_cards=[]
+    for tmp_board in client.list_boards():
+        if tmp_board.id in board_id:
+            for tmp_list in tmp_board.all_lists(): 
+                if tmp_list.id in list_ids:
+                    tmp_cards+=tmp_list.list_cards()
+    return tmp_cards
+tmp_cards = get_cards_from_list_id (alist_id) + get_cards_from_list_id (flist_id)
+
+    
 #BERECHNUNG DER PARAMETER
 
 
 #OUTPUT AUSGABE
 
+
+
+#########################
 def get_card_data(card):
     def _check_data(entry):
         if type(entry)==list:

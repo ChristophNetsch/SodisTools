@@ -3,24 +3,29 @@
 
 [Section IDs]
 
-Boards-IDs = 1A-Board-ID,1B-Board-ID
+Boards-IDs = 5d3c592404851a851319fb34
+#here Boards AS04.1
 #selected boards for report
 
-Active List-IDs = 2A-List-ID, 2B-List-ID
+Active List-IDs = 5df26ceacc6d698cf7b9281e,5d6681e4c335b58258b6619a,5d3c59ae6718858e14f3f728
+#pk anstehend in Zukunft, pk in Bearbeitung, anstehend nächste Woche
 #all analysed active lists for report. Active means, that the card is still in progress
 
-Final List-IDs = 2C-List-ID,2D-List-ID
+Final List-IDs = 5d6cd399a2c2113d42d2331e,5e130b82247d14831a7dfa1f
+#pk abgeschlossen, pk Review
 #all analysed final lists for report. Final means, that the card is still done or in review
 
-Done List-IDs = 2C-List-ID
+Done List-IDs = 5d6cd399a2c2113d42d2331e
+#pk abgeschlossen
 #define final DONE Lists
 
-List-ID Forward Order = 2B-List-ID, 2A-List-ID, 2D-List-ID, 2C-List-ID
+List-ID Forward Order = 5df26ceacc6d698cf7b9281e,5d3c59ae6718858e14f3f728,5d6681e4c335b58258b6619a,5e130b82247d14831a7dfa1f,5d6cd399a2c2113d42d2331e
+#pk in Zukunft, nächste Woche, in Bearbeitung, review, abgeschlossen
 #define List Order for a forward flow of a card
 
 [Parameters]
 repeat = True
 #update and repeat report
 
-report_time = 7
+report_time = 14
 #analysed time frame of report [in days]
