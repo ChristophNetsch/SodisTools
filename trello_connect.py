@@ -6,7 +6,7 @@ Dies ist eine temporäre Skriptdatei.
 """
 
 from trello import TrelloClient
-from StyleFrame import StyleFrame
+from styleframe import StyleFrame
 import os
 from pathlib import Path
 import pandas as pd
@@ -14,16 +14,19 @@ from datetime import datetime
 import shutil
 from slack import WebClient
 from slack.errors import SlackApiError
+import numpy as np
+import configparser as ConfigParser
 
-ROOT=r'C:\Users\cnets\Desktop\SodisTools_development'
+#ROOT=r'C:\Users\cnets\Desktop\SodisTools_development'
 COLUMNS=['Board','List','Title','Link','Description','Checklists','Comments','Due','Members']
-os.chdir(r'C:\Users\cnets\Desktop\SodisTools_development')
+#os.chdir(r'C:\Users\cnets\Desktop\SodisTools_development')
 
 
 #get authentication
-with open (r"keys\trello_API_key.txt", "r") as file:
+
+with open (r"keys/trello_API_key.txt", "r") as file:
     api_key=file.readlines()
-with open (r"keys\trello_API_secret.txt", "r") as file:
+with open (r"keys/trello_API_secret.txt", "r") as file:
     api_secret=file.readlines()
 
 #connect to Trello
@@ -35,8 +38,29 @@ client = TrelloClient(
 del api_key
 del api_secret
 
-all_boards=client.list_boards()
 
+"""
+REPORT TOOL
+"""
+#TRELLO OBJEKT ERSTELLEN
+
+#AUSLESEN DER KONFIGDATEI
+configParser = ConfigParser.RawConfigParser()   
+configFilePath = r"report_test_folder/config.txt"
+configParser.read(configFilePath)
+b_id = configParser.get("Section IDs","Boards-IDs").split(",")
+al_id = configParser.get("Section IDs","Active List-IDs").split(",")
+al_id = configParser.get("Section IDs","Active List-IDs").split(",")
+fl_id = configParser.get("Section IDs","Final List-IDs").split(",")
+dl_id = configParser.get("Section IDs","Done List-IDs").split(",")
+l_id_order = configParser.get("Section IDs","List-ID Forward Order").split(",")
+report_repeat = configParser.get("Parameters","repeat")
+report_time = configParser.get("Parameters","report_time")
+
+#BERECHNUNG DER PARAMETER
+
+
+#OUTPUT AUSGABE
 
 def get_card_data(card):
     def _check_data(entry):
@@ -74,6 +98,9 @@ def get_card_data(card):
             }
     return card_dict
 
+
+"""
+EXPORT TOOL VON CHRISTOPH
 def export2excel():
     try:
         subdir=fr'temp\{timestamp}'
@@ -92,7 +119,7 @@ def export2excel():
             if char in " ?.!/;:":
                 board_name.replace(char,'')   
         #sf = StyleFrame(df_trello) #excel customization, see: https://styleframe.readthedocs.io/en/latest/usage_examples.html
-        df_trello.to_excel(fr'temp\{timestamp}\{board_name}.xlsx',sheet_name='trello_export')   
+        df_trello.to_excel(fr'temp/{timestamp}/{board_name}.xlsx',sheet_name='trello_export')   
 
 
 
@@ -105,7 +132,7 @@ if __name__=='__main__':
         pr = cProfile.Profile()
         pr.enable()
         
-    export2excel()
+    export2excel() #operation deactivated
     
     if speed_eval:
         pr.disable()
@@ -122,9 +149,6 @@ if __name__=='__main__':
             f.write(result)
             f.close()
             
-        speed_eval = pd.read_csv(fr'temp/speed_eval.csv')
-
-        
-    
-    
+            speed_eval = pd.read_csv(fr'temp/speed_eval.csv')
+"""
     

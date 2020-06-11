@@ -1,0 +1,26 @@
+#Config File for Trello Report
+#separate IDs with ','
+
+[Section IDs]
+
+Boards-IDs = 1A-Board-ID,1B-Board-ID
+#selected boards for report
+
+Active List-IDs = 2A-List-ID, 2B-List-ID
+#all analysed active lists for report. Active means, that the card is still in progress
+
+Final List-IDs = 2C-List-ID,2D-List-ID
+#all analysed final lists for report. Final means, that the card is still done or in review
+
+Done List-IDs = 2C-List-ID
+#define final DONE Lists
+
+List-ID Forward Order = 2B-List-ID, 2A-List-ID, 2D-List-ID, 2C-List-ID
+#define List Order for a forward flow of a card
+
+[Parameters]
+repeat = True
+#update and repeat report
+
+report_time = 7
+#analysed time frame of report [in days]
