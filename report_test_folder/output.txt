@@ -1,0 +1,9 @@
+#Output for Trello Report
+#separate IDs with ','
+
+[Aktiv]
+
+r_a_cards = how many cards in all evaluated "active" lists
+r_sf_cards = how many cards do you have in all evaluated "semifinal" lists
+r_f_cards = how many cards do you have in all evaluated "final" lists
+r_cards = how many cards you have in all evaluated lists

@@ -11,11 +11,11 @@ Active List-IDs = 5df26ceacc6d698cf7b9281e,5d6681e4c335b58258b6619a,5d3c59ae6718
 #pk anstehend in Zukunft, pk in Bearbeitung, anstehend nächste Woche
 #all analysed active lists for report. Active means, that the card is still in progress
 
-Final List-IDs = 5d6cd399a2c2113d42d2331e,5e130b82247d14831a7dfa1f
-#pk abgeschlossen, pk Review
-#all analysed final lists for report. Final means, that the card is still done or in review
+Semi-Final List-IDs =5e130b82247d14831a7dfa1f
+#pk Review
+#all analysed semi-final lists for report. Semi-Final means, that the card is done with your activity or responsibility but still pending in review or testing
 
-Done List-IDs = 5d6cd399a2c2113d42d2331e
+Final List-IDs = 5d6cd399a2c2113d42d2331e
 #pk abgeschlossen
 #define final DONE Lists
 
