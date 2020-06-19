@@ -27,5 +27,5 @@ List-ID Forward Order = 5df26ceacc6d698cf7b9281e,5d3c59ae6718858e14f3f728,5d6681
 repeat = True
 #update and repeat report
 
-report_time = 14
+report_time = 30
 #analysed time frame of report [in days]
