@@ -1,0 +1,148 @@
+Trello IDs 
+
+AS00 - Gruppentreffen : 5ccf2d2e81cf1261bc01e3b4
+Anstehende Treffen : 5ccf2d3658c2621ae2adad80
+Weiterbildung / Netzwerk : 5d4299a8397e5142588f4bdc
+Offene Stellenausschreibungen : 5d35604a343f8742de1f3b39
+Vergangene Treffen : 5ccf2d3b1d2d21182a1cf142
+Abgeschlossen : 5df7aa179bffc23bbe999e4b
+
+AS01 - Vereinsentwicklung : 5cc71078956a7d64bba919a1
+VE: Anstehende Arbeitspakete : 5ccb105ba9e44f4a3129f43d
+VE: In Bearbeitung : 5ccb5a801920c21e3f3ee532
+VE: Abgeschlossene Arbeitspakete : 5ccb5a917de96b65e0ecdfac
+Vorstand: Anstehende Arbeitspakete : 5daaeb5f148eaa2352c7f7d3
+Vorstand: In Bearbeitung : 5daaeb654208007e581ef3a7
+Vorstand: Abgeschlossene Arbeitspakete : 5daaeb6e039d1f5d3ae1a992
+
+AS02 - Finanzen : 5cc41e2c22aac58e5809b7c8
+FIN: Anstehende Arbeitspakete : 5cc41e567a332f39d26924f0
+FIN: In Bearbeitung : 5cc41e635950b532b412e503
+FIN: Abgeschlossene Arbeitspakete : 5cc41e6ff13407885c960e9d
+
+AS03.1 - Fundraising und Öffentlichkeitsarbeit : 5cc41e20fd739d696492d26b
+DE: Anstehende Arbeitspakete : 5cc41eb162d0a76806da652f
+DE: In Bearbeitung : 5cc41eb8db0b2737c08e5048
+Events : 5cf55e4342d46f573eab4330
+Sommerfest : 5d1a51fa1c500b3f246b8113
+DE: Abgeschlossene Arbeistpakete : 5cc41ec6d9bd8e8311685cf3
+Archiv : 5d3ff0cb579d4310adf88094
+
+AS03.2 - Redaktion : 5cec21664914ba5e15ab2615
+Quartalsplanung : 5e3e9a12b4c9a43aa1397dbe
+AnstehendePosts/Blog : 5cec21664914ba5e15ab2616
+Review-ReadyToPost : 5cec21664914ba5e15ab2617
+Gepostet : 5cec21664914ba5e15ab2618
+Newsletter : 5e3a6dfc58385874025301b5
+Erledigt : 5ecc020621c87d7500e00d99
+
+AS04.1 - Projekte I - Koordination, HASSCO : 5d3c592404851a851319fb34
+Sonstige Aufgaben - Michas Liste : 5de50e3a925bf23a53df6b9f
+📫 Anstehend in Zukunft: Koordination : 5df26ceacc6d698cf7b9281e
+📫 Anstehend diese Woche: Koordination : 5d3c59ae6718858e14f3f728
+📝 In Bearbeitung: Koordination : 5d6681e4c335b58258b6619a
+⏱ Review: Koordination : 5e130b82247d14831a7dfa1f
+✅ Abgeschlossen: Koordination 🎉 : 5d6cd399a2c2113d42d2331e
+📫 Anstehend in Zukunft: HASSCO : 5e5d2a4d92dc3e6bbca737cd
+📫 Anstehend diese Woche: HASSCO : 5d6682544c63863b01467468
+📝 In Bearbeitung: HASSCO : 5d3c593e9b02483d597214e2
+⏱ Review: HASSCO : 5e5d2a3c010b585111c33a73
+Anstehend: Software : 5d668295b2952f1fc8f11e28
+In Bearbeitung: Software : 5d3c5953473a3b099216582f
+✅ Abgeschlossen: HASSCO 🎉 : 5e77d4334d50d26d99511898
+Termine & AP bei Ausreise (TOSORT) : 5d5ad2fc4e666440c9034597
+
+AS04.2 - Projekte II - Bildung Bleibt & Ernährungssicherheit : 5d66b906891dd67d0d0b9a01
+📫 Anstehend in Zukunft: Bildung Bleibt : 5e5d2a8618f9d433c56aacb4
+📫 Anstehend diese Woche: Bildung Bleibt : 5d668268479fb480909f3122
+📝 In Bearbeitung: Bildung Bleibt : 5d3c5944a5f03284e9ca3b46
+⏱ Review: Bildung Bleibt : 5e5d2ae826565a7f0f6caf77
+✅ Abgeschlossen: Bildung Bleibt 🎉 : 5d6cd3eb62bb041060f14d60
+📫 Anstehend in Zukunft: Ernährungssicherheit : 5e5d2a70ec5950854d5d0e88
+📫 Anstehend diese Woche: Ernährungssicherheit : 5d3c59358a485f3ad1e38437
+📝 In Bearbeitung: Ernährungssicherheit : 5d668236438f158bb97eb7d0
+⏱ Review: Ernährungssicherheit : 5e5d2adea3391455dc9c8c6c
+✅ Abgeschlossen: Ernährungssicherheit 🎉 : 5d6cd3d35086065a7cf261a0
+
+AS04.3 - Projekte III - Qhari Warmi : 5d66b917f685346c700106c5
+📫 Anstehend in Zukunft: Qhari Warmi : 5e5d2b481c00957e9114adcb
+📫 Anstehend diese Woche: Qhari Warmi : 5d3c592b50d57688ea24becf
+📝 In Bearbeitung: Qhari Warmi : 5d6681fb95ef3781753300e9
+⏱ Review: Qhari Warmi : 5e5d2b6ee6baa60148e5fab2
+✅ Abgeschlossen: Qhari Warmi 🎉 : 5d66cf86efb1614cf4253727
+Anstehend: Schulkooperation : 5d6699c216a1321aaa14b49b
+In Bearbeitung: Schulkooperation : 5d6699df0f2b0e27731ae5b9
+✅ Abgeschlossen: Schulkooperation : 5d6cd4368c5f87718f873a20
+
+AS04.4 - Projekte IV - Software aktuelle Aufgaben : 5da86c0aa3e7a346b4ec7cc0
+kurze/sonstige Aufgaben-Anstehend : 5de584777b465e191924b493
+aktuelle Version : 5da86c8506201c3f700f5235
+Backlog später : 5ea92e071bceeb196585b388
+Backlog aktuelle Version : 5e9959b43d98140ef2abcb08
+En Trabajo - In Arbeit : 5da86c97684db10e97a5c368
+Aktuelle App : 5da89ef816249f2c73628a5e
+Im Testing : 5e9958635461747b28a66d4e
+Finalizado - Abgeschlossen : 5da86ca7330df445b496875d
+mittelfristig : 5de5887dac97d37cfaee8ccb
+Clarification : 5ea92dcab260228b6e1bb0fc
+langfristig : 5e6a3515e81f3016b2ecbe33
+Dokumente und Links : 5e319251f0c88108c492e4da
+
+AS04.5 Projekte V - Softwareplanung : 5e9978433b773901d6945e00
+aktuelle Version : 5eccf5f01c1d030fa1aaef4f
+verbesserte Version : 5eccf609ad264e7586e19a0a
+Version für das Misereorpilotprojekt bis Ende 2020 : 5eccf6893efa523721de10f6
+langfristige Version : 5eccf6b93fa04a44981f648f
+
+FS01 - Coordinación : 5da0efa71ca63004a7432029
+📫 borrar : 5cf12505157b9f2087038fe6
+📫 Para hacer* : 5d9290178f8a9275a670c86e
+Para hacer - Cooperación con otras instituciones : 5d927cc0d8a1ac5a8f238e48
+📝 En trabajo* : 5cf1250828e83422355f6c3a
+⏱ En revisión* : 5ea1604ca120c3752732a07f
+✅ Finalizado 🎉 : 5cf1250d8ce19854b7fa735a
+Documentos finales - borrar : 5cf130ba21823614efb8a80f
+
+FS02 - Proyecto HASSCO : 5da0ef94561e5e8ad45e6786
+📫 Para hacer : 5d927ddb2266fa124b104701
+📝 En trabajo : 5da48fb39bbe66673c4708bf
+⏱ En revisión : 5ea160c280e9c11674ff50d7
+✅ Finalizado : 5da48fb6a456ef62425c79cf
+Documentación de Resultados / Productos (Informe mensual) : 5da8b22d6f1d0c8e240dfc58
+
+FS03 - Proyecto: Qhari Warmi - empoderamiento economico : 5da0ef84e8c5aa3061565907
+📫 Para hacer : 5d927c2c5951786010476da5
+📝 En trabajo : 5da47cb60dcd831b255420d7
+⏱ En revisión : 5ea161656149fb76d0177f96
+✅ Finalizado : 5da47cba49f27106d64f8e2a
+Documentos - Qhari Warmi : 5e15c5047c64cc3a12e91466
+
+FS04 - Proyecto: Nutricion Escolar : 5da0ef71069e9b389e5587fc
+📫 Para hacer : 5d927c4545239d845d1481a2
+📝 En trabajo : 5da47cfba6b2b10341b4c1f0
+⏱ En revisión : 5ea1618d53fe7d8858f124f1
+✅ Finalizado : 5da47cfdc5cc684683a43834
+
+FS05 - Finanzas : 5da0efbac2abd26a626249e6
+📫 Para hacer : 5da47ca0a210280e28466261
+📝 En trabajo : 5da47ca6446e451aac475635
+⏱En revisión : 5ea161b45fa46a4cf4ec3f30
+✅ Finalizado : 5da47ca993966d3441c1a675
+
+FS06 - Relaciones Públicas : 5da0f0f5bdf6cb24dd3c2ba3
+📫 Para hacer : 5da47d141cb22c6e4b9d6b4d
+📝 En trabajo : 5da47d17344a5818c9795d58
+⏱ En revisión : 5ea16218b14a2642d1d7892a
+✅ Finalizado : 5da47d1ab6d682825df7473d
+
+FS07 - Desarrollo Organizativo : 5ebbe1e1306d2941ff2219e3
+📫 Para hacer : 5ebbe23545b605801cc8ff24
+📝 En trabajo : 5ebbe23c5a79eb42aaabd263
+⏱ En revisión : 5ebbe2494c98283b5ba65f06
+✅ Finalizado 🎉 : 5ebbe24bc6cda97a49d17ad3
+
+FS08-Producción de Material Educativo para todos los Proyectos : 5eb99e3c0153035246096677
+Proyecto HASSCO : 5eb99e6123c14312c953506d
+Proyecto Nutrición Escolar : 5eb9b8647cbf93622ca66554
+Proyecto Qhari-Warmi : 5eb9b877b73f9c1fbe9d91b0
+Covid-19 : 5ebd526d21d4843dbcfae9a9

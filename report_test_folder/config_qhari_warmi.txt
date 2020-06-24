@@ -3,23 +3,23 @@
 
 [Section IDs]
 
-Boards-IDs = 5d3c592404851a851319fb34
+Boards-IDs = 5d66b917f685346c700106c5
 #here Boards AS04.1
 #selected boards for report
 
-Active List-IDs = 5df26ceacc6d698cf7b9281e,5d6681e4c335b58258b6619a,5d3c59ae6718858e14f3f728
+Active List-IDs = 5e5d2b481c00957e9114adcb, 5d3c592b50d57688ea24becf, 5d6681fb95ef3781753300e9
 #pk anstehend in Zukunft, pk in Bearbeitung, anstehend nächste Woche
 #all analysed active lists for report. Active means, that the card is still in progress
 
-Semi-Final List-IDs =5e130b82247d14831a7dfa1f
+Semi-Final List-IDs = 5e5d2b6ee6baa60148e5fab2
 #pk Review
 #all analysed semi-final lists for report. Semi-Final means, that the card is done with your activity or responsibility but still pending in review or testing
 
-Final List-IDs = 5d6cd399a2c2113d42d2331e
+Final List-IDs = 5d66cf86efb1614cf4253727
 #pk abgeschlossen
 #define final DONE Lists
 
-List-ID Forward Order = 5df26ceacc6d698cf7b9281e,5d3c59ae6718858e14f3f728,5d6681e4c335b58258b6619a,5e130b82247d14831a7dfa1f,5d6cd399a2c2113d42d2331e
+List-ID Forward Order = 5e5d2b481c00957e9114adcb, 5d3c592b50d57688ea24becf, 5d6681fb95ef3781753300e9 , 5e5d2b6ee6baa60148e5fab2 ,5d66cf86efb1614cf4253727
 #pk in Zukunft, nächste Woche, in Bearbeitung, review, abgeschlossen
 #define List Order for a forward flow of a card
 
