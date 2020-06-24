@@ -1,0 +1,34 @@
+#Config File for Trello Report
+#separate IDs with ','
+
+[Section IDs]
+
+Boards-IDs = 5d66b906891dd67d0d0b9a01
+#here Boards AS04.1
+#selected boards for report
+
+Active List-IDs = 5e5d2a70ec5950854d5d0e88, 5d3c59358a485f3ad1e38437, 5d668236438f158bb97eb7d0
+#pk anstehend in Zukunft, pk in Bearbeitung, anstehend nächste Woche
+#all analysed active lists for report. Active means, that the card is still in progress
+
+Semi-Final List-IDs = 5e5d2adea3391455dc9c8c6c
+#pk Review
+#all analysed semi-final lists for report. Semi-Final means, that the card is done with your activity or responsibility but still pending in review or testing
+
+Final List-IDs = 5d6cd3d35086065a7cf261a0
+#pk abgeschlossen
+#define final DONE Lists
+
+List-ID Forward Order = 5e5d2a70ec5950854d5d0e88, 5d3c59358a485f3ad1e38437, 5d668236438f158bb97eb7d0, 5e5d2adea3391455dc9c8c6c, 5d6cd3d35086065a7cf261a0
+#pk in Zukunft, nächste Woche, in Bearbeitung, review, abgeschlossen
+#define List Order for a forward flow of a card
+
+[Parameters]
+repeat = True
+#update and repeat report
+
+report_time = 30
+#analysed time frame of report [in days]
+
+ranking_length = 5
+#number of members in report rankings

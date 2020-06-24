@@ -47,7 +47,7 @@ t_file.close()
 """
 REPORT TOOL
 """
-configFilePath = r"report_test_folder/config_qhari_warmi.txt"
+configFilePath = r"report_test_folder/config_nutrición_escolar.txt"
 
 def create_report (configFilePath):
     #AUSLESEN DER KONFIGDATEI
@@ -285,7 +285,10 @@ def create_report (configFilePath):
         star_due = []
         star_hel = []
         star = []
-        tmp_def= cFD_list[1]
+        for cfd in cFD_list:
+            if cfd.name == "👤Team":
+                tmp_def = cfd
+                break
         helper_master_list = []
         shit_counter = 0
         star_card_counter = 0
@@ -518,20 +521,31 @@ def create_report (configFilePath):
         print("\n") 
         
     def print_active_results(n_cards,a,sf,f):
-        print("You have",n_cards, "cards in your evaluated lists, seperated in", a, "active (doing) cards (",round(a/n_cards*100,1),"%)",sf, "semi final (review) cards (",round(sf/n_cards*100,1),"%) and ", f,"final (done) cards (",round(f/n_cards*100,1),"%) \n")
+        p = "-"
+        if f != 0:
+            p=round(a/n_cards*100,1)
+        print("You have",n_cards, "cards in your evaluated lists, seperated in", a, "active (doing) cards (",p,"%)",sf, "semi final (review) cards (",round(sf/n_cards*100,1),"%) and ", f,"final (done) cards (",round(f/n_cards*100,1),"%) \n")
     
     def print_created_cards_count(r_created_card_counter, report_time):
         print("You have created",r_created_card_counter, "cards in the last", report_time, "days. \n")
     
     def print_dueComplete(f,dC):
-        print("Of all",f, "final cards you have complete",dC, "cards within the due date. That is", round(dC/f*100,2),"% \n")
+        p="-"
+        if f != 0:
+            p=round(dC/f*100,2)
+        print("Of all",f, "final cards you have complete",dC, "cards within the due date. That is", p,"% \n")
     
     def print_star_shit_cards(n_cards,star_count,shit_count,r_cards_wo_member):
         print("Of the" ,n_cards, "cards in your evaluated lists, you have", star_count, "star cards(with a description, member and due date (",round(star_count/n_cards*100,1),"%)", "and",shit_count,"(shit cards (with one or less of the quality marks)",round(shit_count/n_cards*100,1),"%) \n")
         print("You have",r_cards_wo_member,"cards without responsible member. \n")
         
     def print_card_movement(n,nM,fo,ba):
-        print("Of the cards",round((n-nM)/n*100,2),"% have moved. Of the",(fo+ba),"moves,",fo,"(",round(fo/(fo+ba)*100,1),"%) were forward moves and",ba,"(",round(ba/(fo+ba)*100,1),"%)backwards moves. \n")
+        p1="-"
+        p2="-"
+        if ba+fo !=0:
+            p1 = round(fo/(fo+ba)*100,1)
+            p2 = round(ba/(fo+ba)*100,1)
+        print("Of the cards",round((n-nM)/n*100,2),"% have moved. Of the",(fo+ba),"moves,",fo,"(",p1,"%) were forward moves and",ba,"(",p2,"%)backwards moves. \n")
     
     def print_ranking(names_and_values,t_start, t_middle, stopper, percent = "", t_end = ""):
         i=0
