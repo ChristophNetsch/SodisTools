@@ -24,6 +24,8 @@ List-ID Forward Order = 5e5d2b481c00957e9114adcb, 5d3c592b50d57688ea24becf, 5d66
 #define List Order for a forward flow of a card
 
 [Parameters]
+report_name = Projekt Qhari Warmi - Gemeinsam wachsen AS
+
 repeat = True
 #update and repeat report
 

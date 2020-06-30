@@ -47,7 +47,7 @@ t_file.close()
 """
 REPORT TOOL
 """
-configFilePath = r"report_test_folder/config_nutrición_escolar.txt"
+configFilePath = r"report_test_folder/config.txt"
 
 def create_report (configFilePath):
     #AUSLESEN DER KONFIGDATEI
@@ -61,6 +61,7 @@ def create_report (configFilePath):
     report_repeat = configParser.get("Parameters","repeat")
     report_time = configParser.get("Parameters","report_time")
     ranking_length = int(configParser.get("Parameters","ranking_length"))
+    report_name = configParser.get("Parameters","report_name")
     #exclude spaces " "
     def exclude_space_in_list_entries(lst):
         for i in range(0,len(lst),1):
@@ -220,13 +221,15 @@ def create_report (configFilePath):
         created_card_counter = 0
         time_now = time_now.replace(tzinfo=None)
         for card in cards:
-            time2 = card.due_date
+            time2 = card.card_created_date
             if time2 is not "":
                 time2 = time2.replace(tzinfo=None)
                 delta = time_now - time2
-                if int(delta.days) > int(report_time):            
+                if int(abs(delta.days)) < int(report_time):            
                     created_card_counter += 1
         return created_card_counter
+    
+
     
     def cal_responsibilities (cards):
         responsibility = []
@@ -319,6 +322,7 @@ def create_report (configFilePath):
                                 helper_master_list.append(helper_list)
     
                                 break
+                            
                 if len(helper_list) is not 0:
                     helper_list = listToString(helper_list)
                     #if len(card.custom_fields) is not 0:
@@ -360,28 +364,35 @@ def create_report (configFilePath):
     
             #Star Reward        
             if star_counter == 3:
-                star_card_counter = +1
-                string_name = (cards[i].name.strip(" ⭐️") + " ⭐️")
-                string_name.strip(" 💩")
+                star_card_counter += 1
+                string_name = (cards[i].name.replace(" ⭐️","")+ " ⭐️")
+                string_name = string_name.replace(" 💩","")
                     
                 star_mem_here = cards[i].member_ids
+                i_mem = len(star_mem_here)
+                l = 0
                 for member_id in member_dict.values():
                     if member_id["ID"] in  star_mem_here:
                         star_mem_list.append(member_id["ID"])
-                        break
+
+                        l += 1
+                        if l == i_mem:
+                            break
                     
             #Shitty-Card-Warning
             if star_counter <= 1:
                 shit_counter += 1
-                string_name = (cards[i].name.strip(" 💩") + " 💩")
-                string_name.strip(" ⭐️")
+                string_name = (cards[i].name.replace(" 💩","") + " 💩")
+                string_name = string_name.replace(" ⭐️","")
 
             if star_counter == 2:
-                string_name = (cards[i].name.strip(" 💩"))
-                string_name.strip(" ⭐️")
+                string_name = (cards[i].name.replace(" 💩",""))
+                string_name = string_name.replace(" ⭐️","")
                 
             if not cards[i].name == string_name:
                 cards[i].set_name(string_name)
+            string_name = ""
+
                         
         star_mem_list = Counter(star_mem_list) 
         star_mem_list = star_mem_list.most_common()   
@@ -475,28 +486,11 @@ def create_report (configFilePath):
     r_move_forw, r_move_backw, r_not_moved, r_move_stats = analyze_card_movement (tmp_cards)
     
     #PRINT OUTPUT DEFINITION
-    """
-    configParser = ConfigParser.RawConfigParser()   
-    configFilePath = r"report_test_folder/config.txt"
-    configParser.read(configFilePath)
-    board_id = configParser.get("Section IDs","Boards-IDs").split(",")
-    alist_id = configParser.get("Section IDs","Active List-IDs").split(",")
-    sflist_id = configParser.get("Section IDs","Semi-Final List-IDs").split(",")
-    flist_id = configParser.get("Section IDs","Final List-IDs").split(",")
-    list_id_order = configParser.get("Section IDs","List-ID Forward Order").split(",")
-    report_repeat = configParser.get("Parameters","repeat")
-    report_time = configParser.get("Parameters","report_time")
-    ranking_length = int(configParser.get("Parameters","ranking_length"))
-    
-    #INITIALISIERUNG
-    time_now = datetime.now().astimezone()
-    words_checklist = ["agenda","todo"]
-    """
     def print_report_infos():
-        print("Results of Trello Report: \n")
+        print("Results of Trello Report:",report_name," \n")
         print("[PARAMETER]")
         print ("Report time: last",report_time,"days.")
-        print ("Ranking length: ",ranking_length,"entries.")
+        print ("Ranking length:",ranking_length,"entries.")
         
         names = ""
         for lst in alist_ob:
@@ -518,13 +512,12 @@ def create_report (configFilePath):
             names += lst.name + "\n"
         print("List forward flow: \n",names)
         print("Will repeat report in future:",report_repeat)
-        print("\n") 
         
     def print_active_results(n_cards,a,sf,f):
         p = "-"
         if f != 0:
             p=round(a/n_cards*100,1)
-        print("You have",n_cards, "cards in your evaluated lists, seperated in", a, "active (doing) cards (",p,"%)",sf, "semi final (review) cards (",round(sf/n_cards*100,1),"%) and ", f,"final (done) cards (",round(f/n_cards*100,1),"%) \n")
+        print("You have",n_cards, "cards in your evaluated lists, seperated in", a, "active (doing) cards (",p,"%)",sf, "semi final (review) cards (",round(sf/n_cards*100,1),"%) and ", f,"final (done) cards (",round(f/n_cards*100,1),"%). \n")
     
     def print_created_cards_count(r_created_card_counter, report_time):
         print("You have created",r_created_card_counter, "cards in the last", report_time, "days. \n")

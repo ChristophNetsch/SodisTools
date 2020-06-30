@@ -24,6 +24,7 @@ List-ID Forward Order = 5df26ceacc6d698cf7b9281e,5d3c59ae6718858e14f3f728,5d6681
 #define List Order for a forward flow of a card
 
 [Parameters]
+report_name = Projektkoordination AS
 repeat = True
 #update and repeat report
 

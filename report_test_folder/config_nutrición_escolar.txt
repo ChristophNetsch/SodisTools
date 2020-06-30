@@ -24,6 +24,8 @@ List-ID Forward Order = 5e5d2a70ec5950854d5d0e88, 5d3c59358a485f3ad1e38437, 5d66
 #define List Order for a forward flow of a card
 
 [Parameters]
+report_name = Projekt Nutrición Escolar AS
+
 repeat = True
 #update and repeat report
 

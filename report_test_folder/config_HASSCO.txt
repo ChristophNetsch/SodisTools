@@ -24,6 +24,8 @@ List-ID Forward Order = 5e5d2a4d92dc3e6bbca737cd,5d6682544c63863b01467468,5d3c59
 #define List Order for a forward flow of a card
 
 [Parameters]
+report_name = Projekt HASSCO AS
+
 repeat = True
 #update and repeat report
 
