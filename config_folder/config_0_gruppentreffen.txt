@@ -1,0 +1,31 @@
+#Config File for Trello Report
+#separate IDs with ','
+
+[Section IDs]
+
+Boards-IDs = 5ccf2d2e81cf1261bc01e3b4
+#selected boards for report
+
+Active List-IDs = 5ccf2d3658c2621ae2adad80, 5d4299a8397e5142588f4bdc, 5d35604a343f8742de1f3b39
+#all analysed active lists for report. Active means, that the card is still in progress
+
+Semi-Final List-IDs = 5f0093f1864a9d750efb5dfc
+#all analysed semi-final lists for report. Semi-Final means, that the card is done with your activity or responsibility but still pending in review or testing
+
+Final List-IDs = 5ccf2d3b1d2d21182a1cf142, 5df7aa179bffc23bbe999e4b
+#define final DONE Lists
+
+List-ID Forward Order = 5ccf2d3658c2621ae2adad80, 5f0093f1864a9d750efb5dfc, 5ccf2d3b1d2d21182a1cf142, 5df7aa179bffc23bbe999e4b
+#define List Order for a forward flow of a card
+
+[Parameters]
+report_name = Gruppentreffen AS
+
+repeat = True
+#update and repeat report
+
+report_time = 30
+#analysed time frame of report [in days]
+
+ranking_length = 5
+#number of members in report rankings

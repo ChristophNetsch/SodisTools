@@ -32,22 +32,28 @@ client = TrelloClient(
 )
 del api_key
 del api_secret
-"""
+
+#"""
 #TRELLO ID OVERVIEW
+#create txt
 txt = "Trello IDs \n"
 for board in client.list_boards():
     txt += "\n" + board.name + " : " + board.id +"\n"
     for lst in board.all_lists():
         txt += lst.name + " : " + lst.id +"\n"
-t_file =  open(r"report_test_folder/trello_IDs.txt", "w+")
+t_file =  open(r"documentation/trello_IDs.txt", "w+")
 t_file.write(txt)
 t_file.close()
-"""
+#"""
+
 
 """
 REPORT TOOL
 """
-configFilePath = r"report_test_folder/config.txt"
+config_name = os.listdir(r"config_folder/")
+configFilePath = []
+for i in range(1,len(config_name),1):
+    configFilePath.append(r"config_folder/" + config_name[i])
 
 def create_report (configFilePath):
     #AUSLESEN DER KONFIGDATEI
@@ -638,7 +644,13 @@ def create_report (configFilePath):
     print_most_helping(r_most_helpers,ranking_length)
 
 #RUN REPORT
-create_report (configFilePath)
+allreports = True
+if allreports:    
+    for path in configFilePath:
+        create_report (path)
+else:
+        configFilePath = r"config_folder/config_0_gruppentreffen.txt"
+        create_report(configFilePath)
 
 #########################CODE CHRISTOPH
 """def get_card_data(card):

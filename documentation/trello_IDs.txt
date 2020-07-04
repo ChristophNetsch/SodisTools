@@ -1,38 +1,44 @@
 Trello IDs 
 
 AS00 - Gruppentreffen : 5ccf2d2e81cf1261bc01e3b4
-Anstehende Treffen : 5ccf2d3658c2621ae2adad80
+📫 Anstehend: Gruppentreffen : 5ccf2d3658c2621ae2adad80
 Weiterbildung / Netzwerk : 5d4299a8397e5142588f4bdc
 Offene Stellenausschreibungen : 5d35604a343f8742de1f3b39
-Vergangene Treffen : 5ccf2d3b1d2d21182a1cf142
-Abgeschlossen : 5df7aa179bffc23bbe999e4b
+⏱ Review: Gruppentreffen : 5f0093f1864a9d750efb5dfc
+✅ Abgeschlossen: Gruppentreffen 🎉 : 5ccf2d3b1d2d21182a1cf142
+✅ Abgeschlossen: Termine 🎉 : 5df7aa179bffc23bbe999e4b
 
 AS01 - Vereinsentwicklung : 5cc71078956a7d64bba919a1
-VE: Anstehende Arbeitspakete : 5ccb105ba9e44f4a3129f43d
-VE: In Bearbeitung : 5ccb5a801920c21e3f3ee532
-VE: Abgeschlossene Arbeitspakete : 5ccb5a917de96b65e0ecdfac
-Vorstand: Anstehende Arbeitspakete : 5daaeb5f148eaa2352c7f7d3
-Vorstand: In Bearbeitung : 5daaeb654208007e581ef3a7
-Vorstand: Abgeschlossene Arbeitspakete : 5daaeb6e039d1f5d3ae1a992
+📫 Anstehend: Vereinsentwicklung : 5ccb105ba9e44f4a3129f43d
+📝 In Bearbeitung: Vereinsentwicklung : 5ccb5a801920c21e3f3ee532
+⏱ Review: Vereinsentwicklung : 5f008edbbf70226c71c9ec77
+✅ Abgeschlossen: Vereinsentwicklung 🎉 : 5ccb5a917de96b65e0ecdfac
+📫 Anstehend: Vorstand : 5daaeb5f148eaa2352c7f7d3
+📝 In Bearbeitung: Vorstand : 5daaeb654208007e581ef3a7
+⏱ Review: Vorstand : 5f008ecc9341b013e9e9316d
+✅ Abgeschlossen: Vorstand 🎉 : 5daaeb6e039d1f5d3ae1a992
 
 AS02 - Finanzen : 5cc41e2c22aac58e5809b7c8
-FIN: Anstehende Arbeitspakete : 5cc41e567a332f39d26924f0
-FIN: In Bearbeitung : 5cc41e635950b532b412e503
-FIN: Abgeschlossene Arbeitspakete : 5cc41e6ff13407885c960e9d
+📫 Anstehend: Finanzen : 5cc41e567a332f39d26924f0
+📝 In Bearbeitung: Finanzen : 5cc41e635950b532b412e503
+⏱ Review: Finanzen : 5f008a1e6e09c44b5ce73b31
+✅ Abgeschlossen: Finanzen 🎉 : 5cc41e6ff13407885c960e9d
 
 AS03.1 - Fundraising und Öffentlichkeitsarbeit : 5cc41e20fd739d696492d26b
-DE: Anstehende Arbeitspakete : 5cc41eb162d0a76806da652f
-DE: In Bearbeitung : 5cc41eb8db0b2737c08e5048
-Events : 5cf55e4342d46f573eab4330
+📫 Anstehend: Fundraising : 5cc41eb162d0a76806da652f
+📝 In Bearbeitung: Fundraising : 5cc41eb8db0b2737c08e5048
+📆 Events : 5cf55e4342d46f573eab4330
+⏱ Review: Fundraising : 5f00908afcbb6b50a4a7c689
 Sommerfest : 5d1a51fa1c500b3f246b8113
-DE: Abgeschlossene Arbeistpakete : 5cc41ec6d9bd8e8311685cf3
+✅ Abgeschlossen: Fundraising 🎉 : 5cc41ec6d9bd8e8311685cf3
 Archiv : 5d3ff0cb579d4310adf88094
 
 AS03.2 - Redaktion : 5cec21664914ba5e15ab2615
-Quartalsplanung : 5e3e9a12b4c9a43aa1397dbe
-AnstehendePosts/Blog : 5cec21664914ba5e15ab2616
-Review-ReadyToPost : 5cec21664914ba5e15ab2617
-Gepostet : 5cec21664914ba5e15ab2618
+📫 Quartalsplanung: Redaktion : 5e3e9a12b4c9a43aa1397dbe
+📫 Anstehende Posts & Blog: Redaktion : 5cec21664914ba5e15ab2616
+📝 In Bearbeitung: Redaktion : 5f0092c55dca2157019b0e0e
+⏱ Review (ReadyToPost): Redaktion : 5cec21664914ba5e15ab2617
+✅ Abgeschlossen: Redaktion 🎉 : 5cec21664914ba5e15ab2618
 Newsletter : 5e3a6dfc58385874025301b5
 Erledigt : 5ecc020621c87d7500e00d99
 

@@ -1,0 +1,31 @@
+#Config File for Trello Report
+#separate IDs with ','
+
+[Section IDs]
+
+Boards-IDs = 5cc41e20fd739d696492d26b
+#selected boards for report
+
+Active List-IDs = 5cc41eb162d0a76806da652f, 5cc41eb8db0b2737c08e5048, 5cf55e4342d46f573eab4330
+#all analysed active lists for report. Active means, that the card is still in progress
+
+Semi-Final List-IDs = 5f00908afcbb6b50a4a7c689
+#all analysed semi-final lists for report. Semi-Final means, that the card is done with your activity or responsibility but still pending in review or testing
+
+Final List-IDs = 5cc41ec6d9bd8e8311685cf3
+#define final DONE Lists
+
+List-ID Forward Order = 5cc41eb162d0a76806da652f, 5cc41eb8db0b2737c08e5048, 5cf55e4342d46f573eab4330, 5f00908afcbb6b50a4a7c689, 5cc41ec6d9bd8e8311685cf3
+#define List Order for a forward flow of a card
+
+[Parameters]
+report_name = Fundraising & Öffentlichkeitsarbeit AS
+
+repeat = True
+#update and repeat report
+
+report_time = 30
+#analysed time frame of report [in days]
+
+ranking_length = 5
+#number of members in report rankings
