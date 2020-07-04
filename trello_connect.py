@@ -69,6 +69,7 @@ def create_report (configFilePath):
     ranking_length = int(configParser.get("Parameters","ranking_length"))
     report_name = configParser.get("Parameters","report_name")
     #exclude spaces " "
+    
     def exclude_space_in_list_entries(lst):
         for i in range(0,len(lst),1):
             lst[i] = lst[i].replace(" ", "")
@@ -647,7 +648,8 @@ def create_report (configFilePath):
 allreports = True
 if allreports:    
     for path in configFilePath:
-        create_report (path)
+        if path == configFilePath[6]:
+            create_report (path)
 else:
         configFilePath = r"config_folder/config_0_gruppentreffen.txt"
         create_report(configFilePath)
