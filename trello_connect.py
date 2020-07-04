@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 from datetime import datetime
 import shutil
-from slack import WebClient
+import slack
 from slack.errors import SlackApiError
 import numpy as np
 import configparser as ConfigParser
@@ -19,21 +19,49 @@ from collections import Counter, OrderedDict
 #COLUMNS=['Board','List','Title','Link','Description','Checklists','Comments','Due','Members']
 #os.chdir(r'C:\Users\cnets\Desktop\SodisTools_development')
 
-#get authentication
-with open (r"keys/trello_API_key.txt", "r") as file:
-    api_key=file.readlines()
-with open (r"keys/trello_API_secret.txt", "r") as file:
-    api_secret=file.readlines()
+#Trello authentication keys
+def connect_to_trello(KeyFilePath):
+    keyParser = ConfigParser.RawConfigParser()   
+    keyParser.read(KeyFilePath)
+    
+    api_key=keyParser.get("Trello Access","API Key").replace(" ", "")
+    api_secret=keyParser.get("Trello Access","API Secret").replace(" ", "")
+    
+    client_trello = TrelloClient(
+        api_key=api_key,
+        api_secret=api_secret
+    )
+    return client_trello
 
-#connect to Trello
-client = TrelloClient(
-    api_key=api_key,
-    api_secret=api_secret
-)
-del api_key
-del api_secret
+#connect to Slack
+def connect_to_slack(KeyFilePath):
+    keyParser = ConfigParser.RawConfigParser()   
+    keyParser.read(KeyFilePath)
+    
+    app_id = keyParser.get("App Credentials","App ID").replace(" ", "")
+    client_id = keyParser.get("App Credentials","Client ID").replace(" ", "")
+    client_server = keyParser.get("App Credentials","Client Secret").replace(" ", "")
+    signing_secret = keyParser.get("App Credentials","Signing Secret").replace(" ", "")
+    verification_token = keyParser.get("App Credentials","Verification Token").replace(" ", "")
 
-#"""
+    client_slack = slack.WebClient(token=verification_token)
+    
+    client_slack.chat_postMessage(
+        channel="bot-test",
+        text="Hello World! :tada:"
+    )
+    try:
+        response = client_slack.chat_postMessage(
+            channel="bot-test",
+            text="Hello World2! :tada:"
+        )
+    except SlackApiError as e:
+        # You will get a SlackApiError if "ok" is False
+        assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
+  
+    return client_slack
+
+"""
 #TRELLO ID OVERVIEW
 #create txt
 txt = "Trello IDs \n"
@@ -44,12 +72,14 @@ for board in client.list_boards():
 t_file =  open(r"documentation/trello_IDs.txt", "w+")
 t_file.write(txt)
 t_file.close()
-#"""
+"""
 
 
 """
 REPORT TOOL
 """
+client = connect_to_trello(r"keys/trello_access.txt")
+#client_slack = connect_to_slack(r"keys/slack_access.txt")
 config_name = os.listdir(r"config_folder/")
 configFilePath = []
 for i in range(1,len(config_name),1):
@@ -68,7 +98,7 @@ def create_report (configFilePath):
     report_time = configParser.get("Parameters","report_time")
     ranking_length = int(configParser.get("Parameters","ranking_length"))
     report_name = configParser.get("Parameters","report_name")
-    #exclude spaces " "
+        #exclude spaces " "
     
     def exclude_space_in_list_entries(lst):
         for i in range(0,len(lst),1):
@@ -109,7 +139,7 @@ def create_report (configFilePath):
             org_mem = org.get_members()
             for i in range(0,len(org_mem),1):
                 (firstWord, *_) = org_mem[i].full_name.split(maxsplit=1)
-                member_dict[i] = {
+                member_dict[org_mem[i].id] = {
                     "First Name": firstWord,
                     'Name':org_mem[i].full_name,
                     "Username":org_mem[i].username,
@@ -150,11 +180,11 @@ def create_report (configFilePath):
     def ids2username (id_list):
         username=[]
         for member_id in id_list:
-            username.append(client.get_member(member_id).username)
+            username.append(member_dict[member_id]["Username"])
         return username
     
     def id2username (id_m):
-        username = (client.get_member(id_m).username)
+        username = (member_dict[id_m]["Name"])
         return username
     
     
@@ -549,13 +579,14 @@ def create_report (configFilePath):
     
     def print_ranking(names_and_values,t_start, t_middle, stopper, percent = "", t_end = ""):
         i=0
-        for nav in names_and_values:
+        if names_and_values is not []:
+            for nav in names_and_values:
             
-            i += 1
-            print(str(i),".",client.get_member(nav[0]).full_name,t_start,nav[1],t_middle,percent,t_end)
-            if i == stopper:
-                break
-        print("\n")    
+                i += 1                
+                print(str(i),".",member_dict[nav[0]]["Name"],t_start,nav[1],t_middle,percent,t_end)
+                if i == stopper:
+                    break
+            print("\n")    
         
     def print_most_activities(most_actives, stopper):
         text0 = "Most active Members:"
@@ -648,8 +679,7 @@ def create_report (configFilePath):
 allreports = True
 if allreports:    
     for path in configFilePath:
-        if path == configFilePath[6]:
-            create_report (path)
+        create_report (path)
 else:
         configFilePath = r"config_folder/config_0_gruppentreffen.txt"
         create_report(configFilePath)
