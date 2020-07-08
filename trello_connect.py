@@ -80,7 +80,7 @@ REPORT TOOL
 client = connect_to_trello(r"keys/trello_access.txt")
 #client_slack = connect_to_slack(r"keys/slack_access.txt")
 
-#create_trello_id_overview()
+create_trello_id_overview()
 
 config_name = os.listdir(r"config_folder/")
 configFilePath = []

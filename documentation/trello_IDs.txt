@@ -42,20 +42,20 @@ AS03.2 - Redaktion : 5cec21664914ba5e15ab2615
 Newsletter : 5e3a6dfc58385874025301b5
 Erledigt : 5ecc020621c87d7500e00d99
 
-AS04.1 - Projekte I - Koordination, HASSCO : 5d3c592404851a851319fb34
+AS04.1 - Projekte I - Koordination, Wirkungsorientierung : 5d3c592404851a851319fb34
 Sonstige Aufgaben - Michas Liste : 5de50e3a925bf23a53df6b9f
 📫 Anstehend in Zukunft: Koordination : 5df26ceacc6d698cf7b9281e
 📫 Anstehend diese Woche: Koordination : 5d3c59ae6718858e14f3f728
 📝 In Bearbeitung: Koordination : 5d6681e4c335b58258b6619a
 ⏱ Review: Koordination : 5e130b82247d14831a7dfa1f
 ✅ Abgeschlossen: Koordination 🎉 : 5d6cd399a2c2113d42d2331e
-📫 Anstehend in Zukunft: HASSCO : 5e5d2a4d92dc3e6bbca737cd
-📫 Anstehend diese Woche: HASSCO : 5d6682544c63863b01467468
-📝 In Bearbeitung: HASSCO : 5d3c593e9b02483d597214e2
-⏱ Review: HASSCO : 5e5d2a3c010b585111c33a73
+📫 Anstehend in Zukunft: Wirkungsorientierung : 5f05a0e2f9f49a80e0058c4f
+📫 Anstehend diese Woche: Wirkungsorientierung : 5f05a0c66074735ea471b494
+📝 In Bearbeitung: Wirkungsorientierung : 5f05a0bf4fd0bd6430d197f5
+⏱ Review: Wirkungsorientierung : 5f05a0a9fb8774098ac77b27
+✅ Abgeschlossen: Wirkungsorientierung 🎉 : 5f05a09c17aa7a13b6e28258
 Anstehend: Software : 5d668295b2952f1fc8f11e28
 In Bearbeitung: Software : 5d3c5953473a3b099216582f
-✅ Abgeschlossen: HASSCO 🎉 : 5e77d4334d50d26d99511898
 Termine & AP bei Ausreise (TOSORT) : 5d5ad2fc4e666440c9034597
 
 AS04.2 - Projekte II - Bildung Bleibt & Ernährungssicherheit : 5d66b906891dd67d0d0b9a01
@@ -70,7 +70,7 @@ AS04.2 - Projekte II - Bildung Bleibt & Ernährungssicherheit : 5d66b906891dd67d
 ⏱ Review: Ernährungssicherheit : 5e5d2adea3391455dc9c8c6c
 ✅ Abgeschlossen: Ernährungssicherheit 🎉 : 5d6cd3d35086065a7cf261a0
 
-AS04.3 - Projekte III - Qhari Warmi : 5d66b917f685346c700106c5
+AS04.3 - Projekte III - Qhari Warmi & HASSCO : 5d66b917f685346c700106c5
 📫 Anstehend in Zukunft: Qhari Warmi : 5e5d2b481c00957e9114adcb
 📫 Anstehend diese Woche: Qhari Warmi : 5d3c592b50d57688ea24becf
 📝 In Bearbeitung: Qhari Warmi : 5d6681fb95ef3781753300e9
@@ -78,7 +78,12 @@ AS04.3 - Projekte III - Qhari Warmi : 5d66b917f685346c700106c5
 ✅ Abgeschlossen: Qhari Warmi 🎉 : 5d66cf86efb1614cf4253727
 Anstehend: Schulkooperation : 5d6699c216a1321aaa14b49b
 In Bearbeitung: Schulkooperation : 5d6699df0f2b0e27731ae5b9
+📫 Anstehend in Zukunft: HASSCO : 5e5d2a4d92dc3e6bbca737cd
 ✅ Abgeschlossen: Schulkooperation : 5d6cd4368c5f87718f873a20
+📫 Anstehend diese Woche: HASSCO : 5d6682544c63863b01467468
+📝 In Bearbeitung: HASSCO : 5d3c593e9b02483d597214e2
+⏱ Review: HASSCO : 5e5d2a3c010b585111c33a73
+✅ Abgeschlossen: HASSCO 🎉 : 5e77d4334d50d26d99511898
 
 AS04.4 - Projekte IV - Software aktuelle Aufgaben : 5da86c0aa3e7a346b4ec7cc0
 kurze/sonstige Aufgaben-Anstehend : 5de584777b465e191924b493

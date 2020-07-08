@@ -3,28 +3,28 @@
 
 [Section IDs]
 
-Boards-IDs = 5d66b917f685346c700106c5
+Boards-IDs = 5d3c592404851a851319fb34
 #here Boards AS04.1
 #selected boards for report
 
-Active List-IDs =5e5d2a4d92dc3e6bbca737cd, 5d6682544c63863b01467468, 5d3c593e9b02483d597214e2
+Active List-IDs = 5f05a0e2f9f49a80e0058c4f, 5f05a0c66074735ea471b494, 5f05a0bf4fd0bd6430d197f5
 #pk anstehend in Zukunft, pk in Bearbeitung, anstehend nächste Woche
 #all analysed active lists for report. Active means, that the card is still in progress
 
-Semi-Final List-IDs =5e5d2a3c010b585111c33a73
+Semi-Final List-IDs = 5f05a0a9fb8774098ac77b27
 #pk Review
 #all analysed semi-final lists for report. Semi-Final means, that the card is done with your activity or responsibility but still pending in review or testing
 
-Final List-IDs = 5e77d4334d50d26d99511898
+Final List-IDs = 5f05a09c17aa7a13b6e28258
 #pk abgeschlossen
 #define final DONE Lists
 
-List-ID Forward Order = 5e5d2a4d92dc3e6bbca737cd,5d6682544c63863b01467468,5d3c593e9b02483d597214e2,5e5d2a3c010b585111c33a73,5e77d4334d50d26d99511898
+List-ID Forward Order = 5f05a0e2f9f49a80e0058c4f, 5f05a0c66074735ea471b494, 5f05a0bf4fd0bd6430d197f5, 5f05a0a9fb8774098ac77b27 ,5f05a09c17aa7a13b6e28258
 #pk in Zukunft, nächste Woche, in Bearbeitung, review, abgeschlossen
 #define List Order for a forward flow of a card
 
 [Parameters]
-report_name = Projekt HASSCO AS
+report_name = Wirkungsorientierung AS
 
 repeat = True
 #update and repeat report
