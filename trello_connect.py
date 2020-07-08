@@ -226,14 +226,14 @@ def create_report (configFilePath):
             tmp_inactive_time_name.append(card.id) 
             
         tmp_inactive_time2 = tmp_inactive_time
-        
-        for i in range(1,ranking_length+1,1): 
-            val = max(tmp_inactive_time2)
-            pos = tmp_inactive_time.index(val)
-            
-            max_inactive_time.append(val)
-            max_inactive_time_name.append(cards[pos].name)
-            tmp_inactive_time2[pos] -= tmp_inactive_time2[pos]
+        if tmp_inactive_time2 != []:
+            for i in range(1,ranking_length+1,1): 
+                val = max(tmp_inactive_time2)
+                pos = tmp_inactive_time.index(val)
+                
+                max_inactive_time.append(val)
+                max_inactive_time_name.append(cards[pos].name)
+                tmp_inactive_time2[pos] -= tmp_inactive_time2[pos]
         return max_inactive_time, max_inactive_time_name, tmp_inactive_time
     
         #Count and get cards
@@ -606,7 +606,8 @@ def create_report (configFilePath):
         sheet['G19'] = r_f_cards
         
         sheet['D19'] = str(r_move_backw + r_move_forw)
-        sheet['D20'] = str(round((r_not_moved/r_cards*100),1)) + "% der Karten"
+        if r_cards != 0:
+            sheet['D20'] = str(round((r_not_moved/r_cards*100),1)) + "% der Karten"
         
         sheet['A21'] = r_move_backw
         sheet['B21'] = r_move_forw
@@ -677,7 +678,8 @@ def create_report (configFilePath):
         p = "-"
         if f != 0:
             p=round(a/n_cards*100,1)
-        print("You have",n_cards, "cards in your evaluated lists, seperated in", a, "active (doing) cards (",p,"%)",sf, "semi final (review) cards (",round(sf/n_cards*100,1),"%) and ", f,"final (done) cards (",round(f/n_cards*100,1),"%). \n")
+        if n_cards != 0:
+            print("You have",n_cards, "cards in your evaluated lists, seperated in", a, "active (doing) cards (",p,"%)",sf, "semi final (review) cards (",round(sf/n_cards*100,1),"%) and ", f,"final (done) cards (",round(f/n_cards*100,1),"%). \n")
     
     def print_created_cards_count(r_created_card_counter, report_time):
         print("You have created",r_created_card_counter, "cards in the last", report_time, "days. \n")
@@ -689,8 +691,9 @@ def create_report (configFilePath):
         print("Of all",f, "final cards you have complete",dC, "cards within the due date. That is", p,"% \n")
     
     def print_star_shit_cards(n_cards,star_count,shit_count,r_cards_wo_member):
-        print("Of the" ,n_cards, "cards in your evaluated lists, you have", star_count, "star cards(with a description, member and due date (",round(star_count/n_cards*100,1),"%)", "and",shit_count,"(shit cards (with one or less of the quality marks)",round(shit_count/n_cards*100,1),"%) \n")
-        print("You have",r_cards_wo_member,"cards without responsible member. \n")
+        if n_cards != 0:
+            print("Of the" ,n_cards, "cards in your evaluated lists, you have", star_count, "star cards(with a description, member and due date (",round(star_count/n_cards*100,1),"%)", "and",shit_count,"(shit cards (with one or less of the quality marks)",round(shit_count/n_cards*100,1),"%) \n")
+            print("You have",r_cards_wo_member,"cards without responsible member. \n")
         
     def print_card_movement(n,nM,fo,ba):
         p1="-"
@@ -698,7 +701,8 @@ def create_report (configFilePath):
         if ba+fo !=0:
             p1 = round(fo/(fo+ba)*100,1)
             p2 = round(ba/(fo+ba)*100,1)
-        print("Of the cards",round((n-nM)/n*100,2),"% have moved. Of the",(fo+ba),"moves,",fo,"(",p1,"%) were forward moves and",ba,"(",p2,"%)backwards moves. \n") 
+        if n != 0:
+            print("Of the cards",round((n-nM)/n*100,2),"% have moved. Of the",(fo+ba),"moves,",fo,"(",p1,"%) were forward moves and",ba,"(",p2,"%)backwards moves. \n") 
             
     def print_ranking(names_and_values,t_start, t_middle, stopper, percent = "", t_end = ""):
         i=0
