@@ -14,6 +14,7 @@ import configparser as ConfigParser
 from datetime import datetime
 from collections import Counter, OrderedDict
 import openpyxl
+#import win32com.client
 
 #Trello authentication keys
 def connect_to_trello(KeyFilePath):
@@ -632,6 +633,7 @@ def create_report (configFilePath):
         sheet['B70'] = r_cards
         sheet['B71'] = r_star_cards
         sheet['B73'] = r_shit_counter
+        
         sheet['F34'] = r_cards_wo_member
         
         
@@ -640,12 +642,32 @@ def create_report (configFilePath):
         book.save(name)
         print("Saved as excel file")
         
+        """
         # Path to original excel file
-        #WB_PATH = name
+        WB_PATH = name
+        
         # PDF path when saving
-        #PATH_TO_PDF = name.strip(".xlsx") + ".pdf"
-
-
+        PATH_TO_PDF = name.strip(".xlsx") + ".pdf"
+       
+        #CREATE PDF
+        o = win32com.client.Dispatch("Excel.Application")
+        o.Visible = False        
+        wb_path = name
+        
+        wb = o.Workbooks.Open(wb_path)
+        
+        
+        
+        ws_index_list = [1,4,5] #say you want to print these sheets
+        
+        path_to_pdf = PATH_TO_PDF
+        
+        
+        
+        wb.WorkSheets(ws_index_list).Select()
+        
+        wb.ActiveSheet.ExportAsFixedFormat(0, path_to_pdf)
+        """
 
     def print_report_infos():
         print("Results of Trello Report:",report_name," \n")
