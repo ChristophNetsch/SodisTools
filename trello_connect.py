@@ -605,8 +605,9 @@ def create_report (configFilePath):
         sheet['G18'] = r_sf_cards
         sheet['G19'] = r_f_cards
         
-        sheet['C19'] = str(r_move_backw + r_move_forw)
-        sheet['C20'] = str(round((r_not_moved/r_cards*100),1)) + "%"
+        sheet['D19'] = str(r_move_backw + r_move_forw)
+        sheet['D20'] = str(round((r_not_moved/r_cards*100),1)) + "% der Karten"
+        
         sheet['A21'] = r_move_backw
         sheet['B21'] = r_move_forw
         print_ranking_excel_single_line(r_max_inactive_time_name, 5, "B",27)
