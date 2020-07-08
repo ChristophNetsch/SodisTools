@@ -13,11 +13,7 @@ import numpy as np
 import configparser as ConfigParser
 from datetime import datetime
 from collections import Counter, OrderedDict
-
-
-#ROOT=r'C:\Users\cnets\Desktop\SodisTools_development'
-#COLUMNS=['Board','List','Title','Link','Description','Checklists','Comments','Due','Members']
-#os.chdir(r'C:\Users\cnets\Desktop\SodisTools_development')
+import openpyxl
 
 #Trello authentication keys
 def connect_to_trello(KeyFilePath):
@@ -43,8 +39,9 @@ def connect_to_slack(KeyFilePath):
     client_server = keyParser.get("App Credentials","Client Secret").replace(" ", "")
     signing_secret = keyParser.get("App Credentials","Signing Secret").replace(" ", "")
     verification_token = keyParser.get("App Credentials","Verification Token").replace(" ", "")
+    oauth_access_token = keyParser.get("App Credentials","Bot User OAuth Access Token").replace(" ", "")
 
-    client_slack = slack.WebClient(token=verification_token)
+    client_slack = slack.WebClient(token=oauth_access_token)
     
     client_slack.chat_postMessage(
         channel="bot-test",
@@ -61,29 +58,38 @@ def connect_to_slack(KeyFilePath):
   
     return client_slack
 
-"""
+
 #TRELLO ID OVERVIEW
-#create txt
-txt = "Trello IDs \n"
-for board in client.list_boards():
-    txt += "\n" + board.name + " : " + board.id +"\n"
-    for lst in board.all_lists():
-        txt += lst.name + " : " + lst.id +"\n"
-t_file =  open(r"documentation/trello_IDs.txt", "w+")
-t_file.write(txt)
-t_file.close()
-"""
+def create_trello_id_overview(): 
+    #create txt
+    txt = "Trello IDs \n"
+    for board in client.list_boards():
+        txt += "\n" + board.name + " : " + board.id +"\n"
+        for lst in board.all_lists():
+            txt += lst.name + " : " + lst.id +"\n"
+    t_file =  open(r"documentation/trello_IDs.txt", "w+")
+    t_file.write(txt)
+    t_file.close()
+
 
 
 """
 REPORT TOOL
 """
+
 client = connect_to_trello(r"keys/trello_access.txt")
 #client_slack = connect_to_slack(r"keys/slack_access.txt")
+
+#create_trello_id_overview()
+
 config_name = os.listdir(r"config_folder/")
 configFilePath = []
 for i in range(1,len(config_name),1):
-    configFilePath.append(r"config_folder/" + config_name[i])
+    name = (r"config_folder/" + config_name[i])
+    name2 = "config_folder/.DS_Store"
+    if name != name2 :
+        configFilePath.append(r"config_folder/" + config_name[i])
+
 
 def create_report (configFilePath):
     #AUSLESEN DER KONFIGDATEI
@@ -484,7 +490,7 @@ def create_report (configFilePath):
     #BERECHNUNG DER PARAMETER
     
         #[Sektion Init.]
-    boards_ob = get_boards_from_ids(board_id)
+    #boards_ob = get_boards_from_ids(board_id)
     alist_ob = get_lists_from_ids(alist_id)
     flist_ob = get_lists_from_ids(flist_id)
     sflist_ob = get_lists_from_ids(sflist_id)
@@ -523,6 +529,122 @@ def create_report (configFilePath):
     r_move_forw, r_move_backw, r_not_moved, r_move_stats = analyze_card_movement (tmp_cards)
     
     #PRINT OUTPUT DEFINITION
+    def print_excel(path):
+        book = openpyxl.load_workbook('trello_report_vorlage.xlsx')
+        sheet = book.active
+        def print_ranking_excel(names_and_values, stopper, start_cell_column,start_cell_row):
+            i=0
+            alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+            
+            if names_and_values is not []:
+                for nav in names_and_values:
+                    cell_number = str(start_cell_row+i)
+                    next_cell_column = alphabet[alphabet.find(start_cell_column)+1]
+                    
+                    sheet[start_cell_column + cell_number].value = member_dict[nav[0]]["Name"]
+                    sheet[next_cell_column + cell_number].value = nav[1]
+                    i += 1
+                    if i == stopper:
+                        break
+        def print_ranking_excel_single_line(names_and_values, stopper, start_cell_column,start_cell_row):
+            i=0            
+            if names_and_values is not []:
+                for nav in names_and_values:
+                    cell_number = str(start_cell_row+i)
+                    sheet[start_cell_column + cell_number].value = nav
+                    i += 1
+                    if i == stopper:
+                        break            
+                
+        sheet['B2'] = report_name
+        sheet['B7'] = str(report_time) + " Tage"
+        sheet["F7"] = str(ranking_length) + " Einträge"
+        
+        
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        names = ""
+        ij = 0
+        start_cell_row = 9
+        start_cell_column = "A"
+        for lst in alist_ob:
+            next_number = str(start_cell_row+ij)
+            cell_name = start_cell_column+str(next_number)
+            sheet[cell_name] = lst.name
+            ij+=1
+        
+        names = ""
+        ij = 0
+        start_cell_row = 9
+        start_cell_column = "C"
+        for lst in sflist_ob:
+            next_number = str(start_cell_row+ij)
+            cell_name = start_cell_column+str(next_number)
+            sheet[cell_name] = lst.name
+            ij+=1
+        
+        names = ""
+        ij = 0
+        start_cell_row = 9
+        start_cell_column = "E"
+        for lst in flist_ob:
+            next_number = str(start_cell_row+ij)
+            cell_name = start_cell_column+str(next_number)
+            sheet[cell_name] = lst.name
+            ij+=1  
+        
+        names = ""
+        for lst in list_ob_order:
+            names += lst.name + "\n"
+        print("List forward flow: \n",names)
+        print("Will repeat report in future:",report_repeat)
+        
+        sheet['C17'] = r_cards
+        sheet['C18'] = str(r_created_card_counter)
+        
+        sheet['G17'] = r_a_cards
+        sheet['G18'] = r_sf_cards
+        sheet['G19'] = r_f_cards
+        
+        sheet['C19'] = str(r_move_backw + r_move_forw)
+        sheet['C20'] = str(round((r_not_moved/r_cards*100),1)) + "%"
+        sheet['A21'] = r_move_backw
+        sheet['B21'] = r_move_forw
+        print_ranking_excel_single_line(r_max_inactive_time_name, 5, "B",27)
+        days=[]
+        for entry in r_max_inactive_time:
+            days.append(entry.days)
+        print_ranking_excel_single_line(days, 5, "C",27)
+        
+        print_ranking_excel(r_most_actives, 5, "B", 35)
+        print_ranking_excel(r_most_responsability, 5, "E", 39)
+        print_ranking_excel(r_most_helpers, 5, "E", 50)
+        
+        print_ranking_excel(r_most_done, 5, "B", 48)
+        
+        print_ranking_excel(r_most_duecomplete, 5, "A", 60)
+        sheet['G60'] = r_f_cards
+        sheet['G61'] = r_count_dueComplete
+        
+        print_ranking_excel(r_most_star_member, 5, "F", 70)
+
+        sheet['B70'] = r_cards
+        sheet['B71'] = r_star_cards
+        sheet['B73'] = r_shit_counter
+        sheet['F34'] = r_cards_wo_member
+        
+        
+        name = path.strip(".txt")
+        name = name.replace("config", "report") + ".xlsx"
+        book.save(name)
+        print("Saved as excel file")
+        
+        # Path to original excel file
+        #WB_PATH = name
+        # PDF path when saving
+        #PATH_TO_PDF = name.strip(".xlsx") + ".pdf"
+
+
+
     def print_report_infos():
         print("Results of Trello Report:",report_name," \n")
         print("[PARAMETER]")
@@ -575,8 +697,8 @@ def create_report (configFilePath):
         if ba+fo !=0:
             p1 = round(fo/(fo+ba)*100,1)
             p2 = round(ba/(fo+ba)*100,1)
-        print("Of the cards",round((n-nM)/n*100,2),"% have moved. Of the",(fo+ba),"moves,",fo,"(",p1,"%) were forward moves and",ba,"(",p2,"%)backwards moves. \n")
-    
+        print("Of the cards",round((n-nM)/n*100,2),"% have moved. Of the",(fo+ba),"moves,",fo,"(",p1,"%) were forward moves and",ba,"(",p2,"%)backwards moves. \n") 
+            
     def print_ranking(names_and_values,t_start, t_middle, stopper, percent = "", t_end = ""):
         i=0
         if names_and_values is not []:
@@ -674,15 +796,22 @@ def create_report (configFilePath):
     
     print("[COLLABORATIVE]")
     print_most_helping(r_most_helpers,ranking_length)
+    
+    #CREATE EXCEL DOCUMENT
+    print_excel(path)
 
 #RUN REPORT
 allreports = True
+p=1 
 if allreports:    
     for path in configFilePath:
-        create_report (path)
+         create_report (path)
+         print("-- "+ str(p)+" of "+str(len(configFilePath))+" reports done"+"--")
+         p+=1
 else:
         configFilePath = r"config_folder/config_0_gruppentreffen.txt"
         create_report(configFilePath)
+        print("-- test report done --")
 
 #########################CODE CHRISTOPH
 """def get_card_data(card):
