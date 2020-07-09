@@ -85,14 +85,18 @@ create_trello_id_overview()
 
 config_name = os.listdir(r"config_folder/")
 configFilePath = []
-for i in range(1,len(config_name),1):
+
+for i in range(0,len(config_name),1):
     name = (r"config_folder/" + config_name[i])
     name2 = "config_folder/.DS_Store"
-    if name != name2 :
+    if name != name2:
         configFilePath.append(r"config_folder/" + config_name[i])
+    else:
+        ii = i 
+if ii:
+    del(config_name[ii])
 
-
-def create_report (configFilePath):
+def create_report (config_name,configFilePath):
     #AUSLESEN DER KONFIGDATEI
     configParser = ConfigParser.RawConfigParser()   
     configParser.read(configFilePath)
@@ -555,7 +559,39 @@ def create_report (configFilePath):
                     sheet[start_cell_column + cell_number].value = nav
                     i += 1
                     if i == stopper:
-                        break            
+                        break      
+        def print_ranking_excel_single_line_with_zero(names_and_values, stopper, start_cell_column,start_cell_row):
+            i=0            
+            if names_and_values is not []:
+                for nav in names_and_values:
+                    cell_number = str(start_cell_row+i)
+                    sheet[start_cell_column + cell_number].value = nav
+                    i += 1
+                    if i == stopper:
+                        break
+                if i <= 5:
+                    for j in range(i,5,1):
+                       cell_number = str(start_cell_row+j)
+                       sheet[start_cell_column + cell_number].value = 0
+                       j += 1 
+        def print_ranking_excel_names_and_values_single_lines(names_and_values, stopper, start_cell_column,start_cell_row):
+            i=0            
+            if names_and_values is not []:
+                for nav in names_and_values:
+                    cell_number = str(start_cell_row+i)
+                    sheet[start_cell_column + cell_number].value = member_dict[nav[0]]["Name"]
+                    number = i+5
+                    cell_number = str(start_cell_row + number)
+                    sheet[start_cell_column + cell_number].value = nav[1]
+                    i += 1
+                    if i == stopper:
+                        break
+                if i <= 5:
+                    for j in range(i,5,1):
+                       cell_number = str(start_cell_row+j)
+                       sheet[start_cell_column + cell_number].value = 0
+                       cell_number = str(start_cell_row+(j+5))
+                       sheet[start_cell_column + cell_number].value = 0
                 
         sheet['B2'] = report_name
         sheet['B7'] = str(report_time) + " Tage"
@@ -635,6 +671,8 @@ def create_report (configFilePath):
         sheet['B73'] = r_shit_counter
         
         sheet['F34'] = r_cards_wo_member
+        if r_cards != 0:
+            sheet['G34'] = "("+str(round(r_cards_wo_member/r_cards*100,1))+"%)"
         
         
         name = path.strip(".txt")
@@ -642,32 +680,79 @@ def create_report (configFilePath):
         book.save(name)
         print("Saved as excel file")
         
-        """
-        # Path to original excel file
-        WB_PATH = name
-        
-        # PDF path when saving
-        PATH_TO_PDF = name.strip(".xlsx") + ".pdf"
-       
-        #CREATE PDF
-        o = win32com.client.Dispatch("Excel.Application")
-        o.Visible = False        
-        wb_path = name
-        
-        wb = o.Workbooks.Open(wb_path)
         
         
         
-        ws_index_list = [1,4,5] #say you want to print these sheets
-        
-        path_to_pdf = PATH_TO_PDF
         
         
+        #Create Record in Report-Overview
+        wb = openpyxl.load_workbook('results_overview.xlsx')
+        c=0
+        for s in wb.worksheets:
+            if s.title in config_name :
+                sheet = s
+                c=1
+        if c == 0:
+            sheet = wb.copy_worksheet(wb.worksheets[0])
+            sheet.title = config_name[0:30]
+
+        dim = sheet.dimensions
+        sheet.move_range((dim), rows=0, cols=1)
+
+        #Write Entries
+        sheet['A1'] = report_name
+        sheet['A2'] = report_time
+        sheet["A3"] = ranking_length
         
-        wb.WorkSheets(ws_index_list).Select()
+        sheet['A4'] = r_cards
+        sheet['A5'] = r_created_card_counter
         
-        wb.ActiveSheet.ExportAsFixedFormat(0, path_to_pdf)
-        """
+        sheet['A6'] = r_a_cards
+        sheet['A7'] = r_sf_cards
+        sheet['A8'] = r_f_cards        
+        
+        sheet['A9'] = r_move_backw + r_move_forw
+        
+        if r_cards != 0:
+            sheet['A10'] = round((r_not_moved/r_cards*100),1)
+        else:
+            sheet['A10'] = 0
+            
+        sheet['A11'] = r_move_backw
+        sheet['A12'] = r_move_forw
+        print_ranking_excel_single_line_with_zero(r_max_inactive_time_name, 5, "A",13)
+        days=[]
+        
+        for entry in r_max_inactive_time:
+            days.append(entry.days)
+        print_ranking_excel_single_line_with_zero(days, 5, "A",18)
+        
+        print_ranking_excel_names_and_values_single_lines(r_most_actives, 5, "A", 23)
+        print_ranking_excel_names_and_values_single_lines(r_most_responsability, 5, "A", 33)
+        print_ranking_excel_names_and_values_single_lines(r_most_helpers, 5, "A", 43)
+        
+        print_ranking_excel_names_and_values_single_lines(r_most_done, 5, "A", 53)
+        
+        print_ranking_excel_names_and_values_single_lines(r_most_duecomplete, 5, "A", 63)
+        
+        print_ranking_excel_names_and_values_single_lines(r_most_star_member, 5, "A", 73)
+        sheet['A83'] = r_count_dueComplete
+
+        sheet['A84'] = r_star_cards
+        sheet['A85'] = r_shit_counter
+        
+        sheet['A86'] = r_cards_wo_member
+        
+        if r_cards != 0:
+            sheet['A87'] = "("+str(round(r_cards_wo_member/r_cards*100,1))+"%)"
+        else:
+            sheet['A87'] = 0
+        sheet['A88'] = datetime.now().astimezone()
+        
+        
+        wb.save('results_overview.xlsx')
+        print("Saved results in overview file")
+
 
     def print_report_infos():
         print("Results of Trello Report:",report_name," \n")
@@ -830,14 +915,16 @@ def create_report (configFilePath):
 #RUN REPORT
 allreports = True
 p=1 
-if allreports:    
+if allreports:
+    co=0    
     for path in configFilePath:
-         create_report (path)
+         create_report (config_name[co],path)
          print("-- "+ str(p)+" of "+str(len(configFilePath))+" reports done"+"--")
          p+=1
+         co+=1
 else:
         configFilePath = r"config_folder/config_0_gruppentreffen.txt"
-        create_report(configFilePath)
+        create_report(config_name,configFilePath)
         print("-- test report done --")
 
 #########################CODE CHRISTOPH
