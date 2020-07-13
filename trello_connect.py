@@ -96,6 +96,9 @@ for i in range(0,len(config_name),1):
 if ii:
     del(config_name[ii])
 
+def update_cards (config_name,configFilePath):
+    aaa=1
+    
 def create_report (config_name,configFilePath):
     #AUSLESEN DER KONFIGDATEI
     configParser = ConfigParser.RawConfigParser()   
