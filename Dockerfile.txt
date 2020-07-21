@@ -1,6 +1,0 @@
-FROM python:3
-ADD docker_test_script.py /
-RUN pip install numpy
-CMD ["python","./docker_test_script.py"]
-
-#ANLEITUNG:https://runnable.com/docker/python/dockerize-your-python-application

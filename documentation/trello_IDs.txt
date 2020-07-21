@@ -69,6 +69,7 @@ AS04.2 - Projekte II - Bildung Bleibt & Ernährungssicherheit : 5d66b906891dd67d
 📝 In Bearbeitung: Ernährungssicherheit : 5d668236438f158bb97eb7d0
 ⏱ Review: Ernährungssicherheit : 5e5d2adea3391455dc9c8c6c
 ✅ Abgeschlossen: Ernährungssicherheit 🎉 : 5d6cd3d35086065a7cf261a0
+🤔 Überprüfen: Ernährungssicherheit : 5f09b0dc8be38e1edf7f4fce
 
 AS04.3 - Projekte III - Qhari Warmi & HASSCO : 5d66b917f685346c700106c5
 📫 Anstehend in Zukunft: Qhari Warmi : 5e5d2b481c00957e9114adcb
@@ -107,10 +108,10 @@ langfristige Version : 5eccf6b93fa04a44981f648f
 
 FS01 - Coordinación : 5da0efa71ca63004a7432029
 📫 borrar : 5cf12505157b9f2087038fe6
-📫 Para hacer* : 5d9290178f8a9275a670c86e
+📫 Para hacer : 5d9290178f8a9275a670c86e
 Para hacer - Cooperación con otras instituciones : 5d927cc0d8a1ac5a8f238e48
-📝 En trabajo* : 5cf1250828e83422355f6c3a
-⏱ En revisión* : 5ea1604ca120c3752732a07f
+📝 En trabajo : 5cf1250828e83422355f6c3a
+⏱ En revisión : 5ea1604ca120c3752732a07f
 ✅ Finalizado 🎉 : 5cf1250d8ce19854b7fa735a
 Documentos finales - borrar : 5cf130ba21823614efb8a80f
 
