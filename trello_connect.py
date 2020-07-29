@@ -499,6 +499,7 @@ if __name__=='__main__':
                         pos_destination = list_id_order.index(move["destination"]["id"])
                     else:
                         pos_source =-1
+                        pos_destination = -1
                         
                     if (pos_destination != -1) and (pos_source!= -1):
                         if pos_destination > pos_source:
@@ -771,7 +772,7 @@ if __name__=='__main__':
             sheet['A86'] = r_cards_wo_member
             
             if r_cards != 0:
-                sheet['A87'] = "("+str(round(r_cards_wo_member/r_cards*100,1))+"%)"
+                sheet['A87'] = round(r_cards_wo_member/r_cards*100,1)
             else:
                 sheet['A87'] = 0
             sheet['A88'] = datetime.now().astimezone()

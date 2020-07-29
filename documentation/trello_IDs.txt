@@ -85,6 +85,7 @@ In Bearbeitung: Schulkooperation : 5d6699df0f2b0e27731ae5b9
 📝 In Bearbeitung: HASSCO : 5d3c593e9b02483d597214e2
 ⏱ Review: HASSCO : 5e5d2a3c010b585111c33a73
 ✅ Abgeschlossen: HASSCO 🎉 : 5e77d4334d50d26d99511898
+Lauras Karten : 5f170ce19a08191aa119a788
 
 AS04.4 - Projekte IV - Software aktuelle Aufgaben : 5da86c0aa3e7a346b4ec7cc0
 kurze/sonstige Aufgaben-Anstehend : 5de584777b465e191924b493
