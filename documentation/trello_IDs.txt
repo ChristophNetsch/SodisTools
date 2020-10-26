@@ -49,12 +49,16 @@ Sonstige Aufgaben - Michas Liste : 5de50e3a925bf23a53df6b9f
 📝 In Bearbeitung: Koordination : 5d6681e4c335b58258b6619a
 ⏱ Review: Koordination : 5e130b82247d14831a7dfa1f
 ✅ Abgeschlossen: Koordination 🎉 : 5d6cd399a2c2113d42d2331e
+🚫Verworfen: Koordination : 5f7c3f0e5864db25d09cf021
 📫 Anstehend in Zukunft: Wirkungsorientierung : 5f05a0e2f9f49a80e0058c4f
+Aufgaben wöchentliches Treffen: Wirkungsorientierung : 5f8abe63e3792e3b5a561a73
 📫 Anstehend diese Woche: Wirkungsorientierung : 5f05a0c66074735ea471b494
 📝 In Bearbeitung: Wirkungsorientierung : 5f05a0bf4fd0bd6430d197f5
 ⏱ Review: Wirkungsorientierung : 5f05a0a9fb8774098ac77b27
 ✅ Abgeschlossen: Wirkungsorientierung 🎉 : 5f05a09c17aa7a13b6e28258
+Karten Laura : 5f4e56cd4ab0ac588f042650
 Anstehend: Software : 5d668295b2952f1fc8f11e28
+🚫Verworfen: Wirkungsorientierung : 5f8ab98ba16c11344e906175
 In Bearbeitung: Software : 5d3c5953473a3b099216582f
 Termine & AP bei Ausreise (TOSORT) : 5d5ad2fc4e666440c9034597
 
@@ -88,7 +92,6 @@ In Bearbeitung: Schulkooperation : 5d6699df0f2b0e27731ae5b9
 Lauras Karten : 5f170ce19a08191aa119a788
 
 AS04.4 - Projekte IV - Software aktuelle Aufgaben : 5da86c0aa3e7a346b4ec7cc0
-kurze/sonstige Aufgaben-Anstehend : 5de584777b465e191924b493
 aktuelle Version : 5da86c8506201c3f700f5235
 Backlog später : 5ea92e071bceeb196585b388
 Backlog aktuelle Version : 5e9959b43d98140ef2abcb08
@@ -100,6 +103,7 @@ mittelfristig : 5de5887dac97d37cfaee8ccb
 Clarification : 5ea92dcab260228b6e1bb0fc
 langfristig : 5e6a3515e81f3016b2ecbe33
 Dokumente und Links : 5e319251f0c88108c492e4da
+langf-Anstehend : 5de584777b465e191924b493
 
 AS04.5 Projekte V - Softwareplanung : 5e9978433b773901d6945e00
 aktuelle Version : 5eccf5f01c1d030fa1aaef4f
